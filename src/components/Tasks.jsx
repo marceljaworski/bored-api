@@ -2,13 +2,17 @@ import React, {useContext} from 'react'
 import { BoredContext } from '../context/Bored'
 
 function Tasks() {
-    const { tasks } = useContext(BoredContext);
+    const { tasks, reset } = useContext(BoredContext);
+    const handlerReset = () => {
+        reset()
+    }
   return (
     <div>
-        <h3>Do you have {tasks.length} planed activity{tasks.length > 1? "s":""}</h3>
+        <h3>Do you have {tasks.length} planed activit{tasks.length > 1? "ies":"y"}</h3>
         <ul>
-            {tasks.map((task, index) => (<li>{++index}.- {task.activity}</li>))}
+            {tasks.map((task, index) => (<li key={index}>{++index}.- {task.activity}</li>))}
         </ul>
+        <button onClick={handlerReset}>reset</button>
     </div>
   )
 }
