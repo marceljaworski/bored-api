@@ -3,14 +3,12 @@ import { BoredContext } from '../context/Bored'
 
 function Tasks() {
     const { tasks } = useContext(BoredContext);
-    console.log(tasks)
   return (
     <div>
-        <p>Do you have {tasks.length} planed activity{tasks.length > 1? "s":""}</p>
+        <h3>Do you have {tasks.length} planed activity{tasks.length > 1? "s":""}</h3>
         <ul>
             {tasks.map((task, index) => (<li>{++index}.- {task.activity}</li>))}
         </ul>
-        
     </div>
   )
 }

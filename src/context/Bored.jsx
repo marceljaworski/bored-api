@@ -5,7 +5,7 @@ export const BoredContext = createContext();
 
 function BoredProvider({ children }) {
   const [task, setTask] = useState({})
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("activities")) || [])
 
   useEffect(() => {
     newTask()
@@ -22,6 +22,7 @@ function BoredProvider({ children }) {
   }
   const addTask = () => {
     setTasks((current) => [...current, task])
+    window.localStorage.setItem("activities", JSON.stringify(tasks));
   }
   return (
     <BoredContext.Provider value={{ 
