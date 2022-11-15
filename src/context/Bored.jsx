@@ -5,6 +5,8 @@ export const BoredContext = createContext();
 
 function BoredProvider({ children }) {
   const [task, setTask] = useState({})
+  const [tasks, setTasks] = useState([])
+  console.log(tasks)
   useEffect(() => {
     newTask()
   }, []);
@@ -18,11 +20,14 @@ function BoredProvider({ children }) {
       console.log(errors)
     } 
   }
-  
+  const addTask = () => {
+    setTasks((current) => [...current, task])
+  }
   return (
     <BoredContext.Provider value={{ 
       task: task,
       newTask: newTask,
+      addTask,
     }}>
       {children}
     </BoredContext.Provider>
