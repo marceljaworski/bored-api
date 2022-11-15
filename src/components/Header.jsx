@@ -10,8 +10,8 @@ function Header() {
   })
   return (
     <header>
-      <Link to="/">Welkome to the Bored Api</Link>
-      <button>Choose</button>or click for a <button onClick={handlerNewTask}>New task</button> 
+      <Link className='welkome' to="/">Welkome to the boring Api app</Link>
+      <button>Choose</button>or search for a <button className='newTask' onClick={handlerNewTask}>New activity</button> 
     </header>
   )
 }

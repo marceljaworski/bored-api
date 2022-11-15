@@ -5,9 +5,10 @@ function Home() {
   
   return (
     <main>
+      <h2>We have a {task.type} activity for you!</h2>
       <h1>{task.activity}</h1>
       <ul>
-        <li>Type: {task.type}</li>
+        
         <li>Participants: {task.participants}</li>
         <li>price: {task.price}</li>
       </ul>
