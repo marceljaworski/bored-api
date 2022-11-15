@@ -1,8 +1,17 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { BoredContext } from '../context/Bored'
 
 function Tasks() {
+    const { tasks } = useContext(BoredContext);
+    console.log(tasks)
   return (
-    <div>Tasks</div>
+    <div>
+        <p>Do you have {tasks.length} planed activity{tasks.length > 1? "s":""}</p>
+        <ul>
+            {tasks.map((task, index) => (<li>{++index}.- {task.activity}</li>))}
+        </ul>
+        
+    </div>
   )
 }
 

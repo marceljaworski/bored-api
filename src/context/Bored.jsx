@@ -6,7 +6,7 @@ export const BoredContext = createContext();
 function BoredProvider({ children }) {
   const [task, setTask] = useState({})
   const [tasks, setTasks] = useState([])
-  console.log(tasks)
+
   useEffect(() => {
     newTask()
   }, []);
@@ -26,6 +26,7 @@ function BoredProvider({ children }) {
   return (
     <BoredContext.Provider value={{ 
       task: task,
+      tasks: tasks,
       newTask: newTask,
       addTask,
     }}>

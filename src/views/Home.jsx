@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { BoredContext } from '../context/Bored';
-import Tasks from '../components/Tasks'
+import Tasks from '../components/Tasks';
+
 function Home() {
-  const { task } = useContext(BoredContext);
+  const { task, tasks } = useContext(BoredContext);
   
   return (
     <main>
@@ -12,7 +13,8 @@ function Home() {
         <li>Participants: {task.participants}</li>
         <li>price: {task.price}</li>
       </ul>
-      <Tasks />
+      {tasks.length > 0 && <Tasks />}
+      
       
     </main>
   )
