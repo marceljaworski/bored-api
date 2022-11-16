@@ -4,18 +4,24 @@ import { useContext } from 'react';
 
 
 function Header() {
-  const { newTask, addTask } = useContext(BoredContext);
+  const { newTask, addTask, reset, tasks } = useContext(BoredContext);
   const handlerNewTask = () => newTask();
+  const handlerReset = () => {
+    reset()
+}
   
   const handlerChoose = () => {
     addTask()
   }
   return (
     <header>
+      {tasks.length > 0 && <button className='red' onClick={handlerReset}>reset</button>}
       <Link className='welkome' to="/">Welkome to the bored Api app</Link>
       <button onClick={handlerChoose}>Choose</button>
       or search for a 
-      <button className='newTask' onClick={handlerNewTask}>New activity</button> 
+      <button className='newTask' onClick={handlerNewTask}>New activity</button>
+      
+
     </header>
   )
 }

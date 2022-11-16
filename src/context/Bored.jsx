@@ -21,12 +21,17 @@ function BoredProvider({ children }) {
     } 
   }
   const addTask = () => {
+    // let value
     setTasks((current) => [...current, task])
-    window.localStorage.setItem("activities", JSON.stringify(tasks));
+    
   }
+  useEffect(() => {
+    localStorage.setItem("activities", JSON.stringify(tasks));
+  }, [addTask]);
+    
   const reset = () => {
     setTasks([])
-    window.localStorage.setItem("activities",JSON.stringify([]));
+    localStorage.removeItem("activities");
   }
   return (
     <BoredContext.Provider value={{ 
