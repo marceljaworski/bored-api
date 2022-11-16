@@ -4,7 +4,7 @@ import { BoredContext } from '../context/Bored';
 
 function Filter() {
     const { typeFilter } = useContext(BoredContext);
-    console.log(tasks)
+    
     const handleChange = (event) => {
         typeFilter(event.target.value);
     };
