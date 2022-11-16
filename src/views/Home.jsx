@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { BoredContext } from '../context/Bored';
 import Tasks from '../components/Tasks';
+import Filter from '../components/Filter'
 
 function Home() {
   const { task, tasks } = useContext(BoredContext);
@@ -13,6 +14,7 @@ function Home() {
         <li>Participants: {task.participants}</li>
         <li>price: {task.price}</li>
       </ul>
+      <Filter />
       {tasks.length > 0 && <Tasks />}
       
       
