@@ -3,13 +3,12 @@ import { useContext } from 'react';
 import { BoredContext } from '../context/Bored';
 
 function Filter() {
-    const { typeFilter } = useContext(BoredContext);
-    
+    const { typeFilter, task } = useContext(BoredContext);
     const handleChange = (event) => {
         typeFilter(event.target.value);
     };
   return (
-    <select value=":type" onChange={handleChange}>
+    <select value={task.type} onChange={handleChange}>
         <option value="recreational">recreational</option>
         <option value="education">education</option>
         <option value="relaxation">relaxation</option>

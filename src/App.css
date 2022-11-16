@@ -14,7 +14,7 @@ button {
   color: rgb(43, 226, 198);
   border-radius: 8px;
   border: 1px solid transparent;
-  margin-inline: 0.5rem;
+  margin: 0.1rem;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -42,4 +42,11 @@ li {
 }
 .red {
   color: orangered;
+}
+select {
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: bolder;
+  font-size: medium;
+  background-color: #202020;
+  border: none;
 }
