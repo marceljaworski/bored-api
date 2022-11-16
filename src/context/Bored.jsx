@@ -21,14 +21,12 @@ function BoredProvider({ children }) {
     } 
   }
   const addTask = () => {
-    // let value
     setTasks((current) => [...current, task])
-    
   }
   useEffect(() => {
     localStorage.setItem("activities", JSON.stringify(tasks));
   }, [addTask]);
-    
+  
   const reset = () => {
     setTasks([])
     localStorage.removeItem("activities");
