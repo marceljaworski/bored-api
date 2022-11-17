@@ -13,7 +13,7 @@ function BoredProvider({ children }) {
   }, []);
   const newTask = async () => {
     try {
-      const response = await axios.get("http://www.boredapi.com/api/activity/");
+      const response = await axios.get("https://www.boredapi.com/api/activity/");
       if (response.status === 200) {
         setTask(response.data)           
       }
@@ -29,7 +29,7 @@ function BoredProvider({ children }) {
   }, [addTask]);
   const typeFilter = async (type) => {
     try {
-      const response = await axios.get(`http://www.boredapi.com/api/activity?type=${type}`);
+      const response = await axios.get(`https://www.boredapi.com/api/activity?type=${type}`);
       if (response.status === 200) {
         setTask(response.data)           
       }
