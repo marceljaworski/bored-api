@@ -1,13 +1,20 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+h1, h3{
+  padding-top: .5rem;
   text-align: center;
+  line-height: 2rem;
+}
+header {
+  padding-top: .5rem;
+  display: flex;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 button {
@@ -30,8 +37,8 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
 li {
+  /* text-align: left; */
   list-style: none;
 }
 .newTask {

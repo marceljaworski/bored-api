@@ -6,24 +6,26 @@ import Filter from '../components/Filter'
 function Home() {
   const { task, tasks, newTask, addTask } = useContext(BoredContext);
   const handlerNewTask = () => newTask();
-  const handlerChoose = () => {
-    addTask()
-  }
+  const handlerChoose = () => addTask();
+  
   
   return (
     <main>
       <h3>We have a <Filter /> activity for you!</h3>
       <h1>{task.activity}</h1>
-      <ul>
-        <li>Participants: {task.participants}</li>
-        <li>price: {task.price}</li>
-      </ul>
-      <button onClick={handlerChoose}>Choose</button>
-      <span> or search for a </span>
-      <button className='newTask' onClick={handlerNewTask}>New activity</button>
-      
-      {tasks.length > 0 && <Tasks />}
-      
+      <section>
+        <ul>
+          <li>Participants: {task.participants}</li>
+          <li>price: {task.price}</li>
+        </ul>
+        <div>
+          <button onClick={handlerChoose}>Choose</button>
+          <span> or search for a </span>
+          <button className='newTask' onClick={handlerNewTask}>New activity</button>
+        </div>
+        {tasks.length > 0 && <Tasks />}
+      </section>
+    
       
     </main>
   )
