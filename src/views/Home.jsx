@@ -26,7 +26,7 @@ function Home() {
         {tasks.length > 0 && <Tasks />}
       </section>
     
-      
+      <footer><p>&copy; 2023 </p><a href='https://marceljaworski.de/'>marceljaworski.de</a></footer>
     </main>
   )
 }

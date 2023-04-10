@@ -1,17 +1,17 @@
 
 h1, h3{
-  padding-top: .5rem;
+  padding: .5rem;
   text-align: center;
   line-height: 2rem;
 }
 header {
-  padding-top: .5rem;
+  padding: .5rem;
   display: flex;
   justify-content: center;
+  border-bottom:  rgba(255, 255, 255, 0.233) solid 1px;
 }
 
 section {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
@@ -37,8 +37,11 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+ul {
+  display: inline-block;
+  text-align: left;
+}
 li {
-  /* text-align: left; */
   list-style: none;
 }
 .newTask {
@@ -48,7 +51,9 @@ li {
   color: #646cff;
 }
 .red {
+  display: block;
   color: orangered;
+  margin:auto;
 }
 select {
   color: rgba(255, 255, 255, 0.87);
@@ -56,4 +61,20 @@ select {
   font-size: medium;
   background-color: #202020;
   border: none;
+}
+footer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  gap: .5rem;
+  color: rgba(255, 255, 255, 0.233);
+  border-top:  rgba(255, 255, 255, 0.233) solid 1px;
+}
+a{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.233);
 }
