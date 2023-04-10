@@ -5,10 +5,9 @@ h1, h3{
   line-height: 2rem;
 }
 header {
-  padding: .5rem;
+  padding-top: .5rem;
   display: flex;
   justify-content: center;
-  border-bottom:  rgba(255, 255, 255, 0.233) solid 1px;
 }
 
 section {
