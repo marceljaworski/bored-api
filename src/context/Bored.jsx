@@ -43,10 +43,10 @@ function BoredProvider({ children }) {
     setTasks([])
     localStorage.removeItem("activities");
   }
-  const toggle = ( taskId, done) => {
+  const toggle = ( task ) => {
     const _tasks = [...tasks]
-    _tasks[taskId].done = !done
-    console.log(_tasks, "id", taskId)
+    _tasks[task.id].done = !task.done
+    
     setTasks(_tasks)
   } 
   return (

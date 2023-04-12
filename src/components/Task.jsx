@@ -5,8 +5,8 @@ function Task({task}) {
     const { toggle } = useContext(BoredContext);
     const [ done, setDone ] = useState(task.done)
     const handlerDone = () => {
-        setDone(!done)
-        toggle(task.id, done);
+        setDone(!done);
+        toggle(task);
     }
   return (
     <>
