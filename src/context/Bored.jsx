@@ -7,7 +7,6 @@ function BoredProvider({ children }) {
   const [task, setTask] = useState({})
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("activities")) || [])
   
-  console.log(task)
   useEffect(() => {
     newTask()
   }, []);
