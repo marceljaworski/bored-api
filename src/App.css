@@ -42,6 +42,22 @@ ul {
 }
 li {
   list-style: none;
+  padding-inline: 0.5rem;
+}
+.tasks-list__item-container{
+  max-width: 500px;
+  position: relative;
+}
+.tasks-list__item {
+  display: inline-flex;
+  gap: .2rem;
+  margin-right: 1rem;
+  line-height: 20px;
+}
+.delete-item{
+  position: absolute;
+  right: .2rem;
+  bottom: .4rem;
 }
 .newTask {
   color: orange;

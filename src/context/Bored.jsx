@@ -20,12 +20,12 @@ function BoredProvider({ children }) {
     }catch (errors) {
       console.log(errors)
     } 
-  }
+  };
   const addTask = () => {
     task.done = false;
-    task.id = tasks.length;
-    setTasks((current) => [...current, task])
-  }
+    setTasks((current) => [...current, task]);
+    newTask();
+  };
   useEffect(() => {
     localStorage.setItem("activities", JSON.stringify(tasks));
   }, [tasks]);
@@ -38,17 +38,23 @@ function BoredProvider({ children }) {
     }catch (errors) {
       console.log(errors)
     } 
-  }
+  };
   const reset = () => {
     setTasks([])
     localStorage.removeItem("activities");
-  }
-  const toggle = ( task ) => {
+  };
+  const toggle = ( key ) => {
     const _tasks = [...tasks]
-    _tasks[task.id].done = !task.done
-    
+    _tasks.forEach(task => {
+      if(task.key == key) task.done = !task.done 
+    });
+    // _tasks[task.id].done = !task.done
     setTasks(_tasks)
-  } 
+  }; 
+  const deleteOne = (key) => {
+    const _tasks = tasks.filter( task => task.key !== key)
+    setTasks( _tasks)
+  };
   return (
     <BoredContext.Provider value={{ 
       task: task,
@@ -57,11 +63,12 @@ function BoredProvider({ children }) {
       addTask,
       reset,
       typeFilter,
-      toggle
+      toggle,
+      deleteOne
     }}>
       {children}
     </BoredContext.Provider>
   );
-}
+};
 
 export default BoredProvider
