@@ -15,8 +15,9 @@ function Home() {
       <h1>{task.activity}</h1>
       <section>
         <ul>
+          <li><a href={task.link} target='_blank'>{task.link}</a></li>
+          <li>type: {task.type}</li>
           <li>Participants: {task.participants}</li>
-          <li>price: {task.price}</li>
         </ul>
         <div>
           <button onClick={handlerChoose}>Choose</button>

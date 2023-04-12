@@ -7,7 +7,7 @@ function BoredProvider({ children }) {
   const [task, setTask] = useState({})
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("activities")) || [])
   
-  
+  console.log(task)
   useEffect(() => {
     newTask()
   }, []);
@@ -15,13 +15,14 @@ function BoredProvider({ children }) {
     try {
       const response = await axios.get("https://www.boredapi.com/api/activity/");
       if (response.status === 200) {
-        setTask(response.data)           
+        setTask(response.data)        
       }
     }catch (errors) {
       console.log(errors)
     } 
   }
   const addTask = () => {
+    task.done = false;
     setTasks((current) => [...current, task])
   }
   useEffect(() => {
