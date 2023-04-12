@@ -43,10 +43,6 @@ ul {
 li {
   list-style: none;
 }
-.tasks-list__item::marker {
-  content: '✓';
-  color: green;
-}
 .newTask {
   color: orange;
 }
