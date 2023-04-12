@@ -10,6 +10,7 @@ function BoredProvider({ children }) {
   useEffect(() => {
     newTask()
   }, []);
+  
   const newTask = async () => {
     try {
       const response = await axios.get("https://www.boredapi.com/api/activity/");
@@ -22,11 +23,12 @@ function BoredProvider({ children }) {
   }
   const addTask = () => {
     task.done = false;
+    task.id = tasks.length;
     setTasks((current) => [...current, task])
   }
   useEffect(() => {
     localStorage.setItem("activities", JSON.stringify(tasks));
-  }, [addTask]);
+  }, [tasks]);
   const typeFilter = async (type) => {
     try {
       const response = await axios.get(`https://www.boredapi.com/api/activity?type=${type}`);
@@ -41,6 +43,12 @@ function BoredProvider({ children }) {
     setTasks([])
     localStorage.removeItem("activities");
   }
+  const toggle = ( taskId, done) => {
+    const _tasks = [...tasks]
+    _tasks[taskId].done = !done
+    console.log(_tasks, "id", taskId)
+    setTasks(_tasks)
+  } 
   return (
     <BoredContext.Provider value={{ 
       task: task,
@@ -49,6 +57,7 @@ function BoredProvider({ children }) {
       addTask,
       reset,
       typeFilter,
+      toggle
     }}>
       {children}
     </BoredContext.Provider>

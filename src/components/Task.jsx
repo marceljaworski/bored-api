@@ -1,16 +1,19 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react';
+import { BoredContext } from '../context/Bored';
 
-function Task(task, index) {
-    const [ done, setDone ] = useState(task.task.done)
+function Task({task}) {
+    const { toggle } = useContext(BoredContext);
+    const [ done, setDone ] = useState(task.done)
     const handlerDone = () => {
         setDone(!done)
+        toggle(task.id, done);
     }
   return (
     <>
-        <li className='tasks-list__item' key={index}
+        <li className='tasks-list__item'
             onClick={handlerDone} 
             style={(done)? {textDecoration: "line-through", color: "red"}: {}}
-            >{task.task.activity}</li>
+            >{task.activity}</li>
     </>
   )
 }
