@@ -11,11 +11,13 @@ function Home() {
   
   return (
     <main>
-      <h3>We have a <Filter /> activity for you!</h3>
-      <h1>{task.activity}</h1>
+      <div className='title-container'>
+        <h3>We have a <Filter /> activity for you!</h3>
+        <h1>{task.activity}</h1>
+        <a className='task-link' href={task.link} target='_blank'>{task.link}</a>
+      </div>
       <section>
         <ul>
-          <li><a href={task.link} target='_blank'>{task.link}</a></li>
           <li>type: {task.type}</li>
           <li>Participants: {task.participants}</li>
         </ul>
@@ -27,7 +29,10 @@ function Home() {
         {tasks.length > 0 && <Tasks />}
       </section>
     
-      <footer><p>&copy; 2023 </p><a href='https://marceljaworski.de/'>marceljaworski.de</a></footer>
+      <footer>
+        <p>&copy; 2023 </p>
+        <a href='https://marceljaworski.de/'>marceljaworski.de</a>
+      </footer>
     </main>
   )
 }
